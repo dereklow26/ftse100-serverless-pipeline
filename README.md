@@ -8,13 +8,13 @@ I also plan to upload this to Github as a Portfolio object, including architectu
 I hope this project will lead to even larger projects in the future, and give confidence in taking the AWS Solutions Architect Associate exam in the future. Ultimately, I hope this is a stepping stone to my goal of being a Cloud Engineer/Solutions Architect. 
 
 ## Technologies
-AWS Lambda (Runs code in response to events without managing infrastructure)
-Amazon S3 (Stores raw and clean data)
-AWS Glue Catalog (Keep track of data schemas for data in S3)
-Amazon Athena (Run queries directly on S3 data)
-Amazon QuickSight (Builds interactive dashboards and visualization from Athena queries)
-Terraform (IaC tool that manages resources)
-Python (yfinance to fetch stock market data and pandas to clean datasets) 
+- AWS Lambda (Runs code in response to events without managing infrastructure)
+- Amazon S3 (Stores raw and clean data)
+- AWS Glue Catalog (Keep track of data schemas for data in S3)
+- Amazon Athena (Run queries directly on S3 data)
+- Amazon QuickSight (Builds interactive dashboards and visualization from Athena queries)
+- Terraform (IaC tool that manages resources)
+- Python (yfinance to fetch stock market data and pandas to clean datasets) 
 
 ## Functional Goals
 1. Automate ingestion of FTSE-100 stock price data daily
@@ -50,14 +50,13 @@ Defines the consistency, standard, security expectation, and targets of this pro
 - Athena: Partitioned queries by date to minimize scanned data
 
 ## Data Flow (Architectural Diagram)
-
 Architectural diagram can be found in docs folder.
 
 Split into 5 sections: Ingestion, Raw, Processing, Analytics and Monitoring.
 
-Ingestion: Collects raw data
-Raw: Stores raw data
-Processing: Clean and shape data
-Analytics: Visualise and query clean data
-Monitoring: Keep track of alerts, logs and metrics
+- Ingestion: Collects raw data
+- Raw: Stores raw data
+- Processing: Clean and shape data
+- Analytics: Visualise and query clean data
+- Monitoring: Keep track of alerts, logs and metrics
 
