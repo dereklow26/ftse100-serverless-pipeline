@@ -19,16 +19,16 @@ Python (yfinance, pandas)
 ## Non-functional goals 
 Defines the consistency, standard, security expectation, and targets of this project
 
-# Idempotency
+### Idempotency
 - Ensure reprocessing data from the same date do not create duplicate data
 - Use dt='YYYY-MM-DD' as unique identifiers for each folder
 - Store processed markers in S3
 
-# Retries
+### Retries
 - Lambda retries with exponential backoff for a maximum of 3 attempts
 - Data that cannot be fully processed is sent to SQS DLQ for inspection
 
-# IAM Least Priviledge
+### IAM Least Priviledge
 - Each Lambda has its own IAM role
 - Permissions set to only required actions:
 -   Fetch Lambda: s3:PutObject in raw zone
@@ -36,7 +36,7 @@ Defines the consistency, standard, security expectation, and targets of this pro
 - No AdministratorAccess or broad permissions is given
 - Enforced using Terraform IAM role definitions
 
-# Cost Targets
+### Cost Targets
 - Total cost: < $10/month
 - Raw Data: Removed after 30 days
 - Clean Data: Move to Glacier after 90 days, removed after 6 months
