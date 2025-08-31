@@ -1,0 +1,1 @@
+# Example CSV stock data
