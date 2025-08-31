@@ -8,13 +8,20 @@ I also plan to upload this to Github as a Portfolio object, including architectu
 I hope this project will lead to even larger projects in the future, and give confidence in taking the AWS Solutions Architect Associate exam in the future. Ultimately, I hope this is a stepping stone to my goal of being a Cloud Engineer/Solutions Architect. 
 
 ## Technologies
-AWS Lambda
-Amazon S3 (Raw + Clean Zones)
-AWS Glue Catalog
-Amazon Athena
-Amazon QuickSight
-Terraform (IaC)
-Python (yfinance, pandas)
+AWS Lambda (Runs code in response to events without managing infrastructure)
+Amazon S3 (Stores raw and clean data)
+AWS Glue Catalog (Keep track of data schemas for data in S3)
+Amazon Athena (Run queries directly on S3 data)
+Amazon QuickSight (Builds interactive dashboards and visualization from Athena queries)
+Terraform (IaC tool that manages resources)
+Python (yfinance to fetch stock market data and pandas to clean datasets) 
+
+## Functional Goals
+1. Automate ingestion of FTSE-100 stock price data daily
+2. Store raw data in S3 with partitioned folders
+3. Provide SQL-based analytics via Athena and visual dashboards via QuickSight
+4. Ensure reliability through idempotency, retries and principle of least priviledge
+5. Keep the solution secure (IAM Least Priviledge) and cost-effective (<$10/month)
 
 ## Non-functional goals 
 Defines the consistency, standard, security expectation, and targets of this project
@@ -37,12 +44,14 @@ Defines the consistency, standard, security expectation, and targets of this pro
 - Enforced using Terraform IAM role definitions
 
 ### Cost Targets
-- Total cost: < $10/month
+- Total cost: <$10/month
 - Raw Data: Removed after 30 days
 - Clean Data: Move to Glacier after 90 days, removed after 6 months
 - Athena: Partitioned queries by date to minimize scanned data
 
-## Architectural Diagram
+## Data Flow (Architectural Diagram)
+
+Architectural diagram can be found in docs folder.
 
 Split into 5 sections: Ingestion, Raw, Processing, Analytics and Monitoring.
 
