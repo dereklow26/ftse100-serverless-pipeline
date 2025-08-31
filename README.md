@@ -53,7 +53,6 @@ Defines the consistency, standard, security expectation, and targets of this pro
 Architectural diagram can be found in docs folder.
 
 Split into 5 sections: Ingestion, Raw, Processing, Analytics and Monitoring.
-
 - Ingestion: Collects raw data
 - Raw: Stores raw data
 - Processing: Clean and shape data
