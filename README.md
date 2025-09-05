@@ -59,3 +59,21 @@ Split into 5 sections: Ingestion, Raw, Processing, Analytics and Monitoring.
 - Analytics: Visualise and query clean data
 - Monitoring: Keep track of alerts, logs and metrics
 
+
+Coding:
+Lambda Basics: 
+In app.py (Lambda Handler), the following things need to be present:
+- Parse and Validate the Event (Accepts event in multiple formats, and check if all values are correct, and raises invalid values)
+- Access Environment Variables ()
+- Logging (INFO for all successful and ERROR for failed events in a structured way so it is easier to search)
+- Error Handling and Retries (Use SQS DLQ to store failed events)
+- S3 Interactions (Upload receipts to S3)
+- Idempotency (Use head_object to check if file already exist)
+- Time Budget Awareness (Use context.get_remaining_time_in_millis() to avoid work when function times out)
+- Return clear response (dictionary message)
+
+
+
+
+
+
